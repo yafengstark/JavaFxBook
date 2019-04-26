@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.layout.StackPane;
@@ -38,6 +39,8 @@ public class ListViewWithComboBoxSample extends Application {
         for (int i = 0; i < 18; i++) {
             data.add("anonym");
         }
+
+
 
         listView.setItems(data);
 
