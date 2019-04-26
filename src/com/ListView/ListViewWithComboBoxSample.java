@@ -1,4 +1,4 @@
-package com;
+package com.ListView;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;

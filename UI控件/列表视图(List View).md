@@ -37,3 +37,18 @@ list.setOrientation(Orientation.HORIZONTAL);
 
 
 [源码：带有Combo Box列表单元的List View](../src/com/ListViewSample.java)
+
+![](./image/3-12-4-list-combobox.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
