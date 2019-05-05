@@ -49,6 +49,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.SVGPath;
 import javafx.stage.Stage;
 
+/**
+ * 组合框
+ */
 public class ColorPickerSample extends Application {
       
     ImageView logo = new ImageView(
