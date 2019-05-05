@@ -48,6 +48,9 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+/**
+ * 多选一
+ */
 public class ChoiceBoxSample extends Application {
 
     Rectangle rect = new Rectangle(150, 30);
@@ -81,6 +84,7 @@ public class ChoiceBoxSample extends Application {
        choiceBox.getSelectionModel().selectedIndexProperty().addListener(
            (ObservableValue<? extends Number> ov,
                 Number old_val, Number new_val) -> {
+
                     label.setText(greetings[new_val.intValue()]);            
         });
              
