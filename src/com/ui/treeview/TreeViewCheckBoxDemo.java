@@ -53,6 +53,7 @@ public class TreeViewCheckBoxDemo extends Application {
                     new CheckBoxTreeItem<>( "" + (i+1));
 
 
+            // 勾选事件
             checkBoxTreeItem.selectedProperty().addListener((obs, wasChecked, isNowChecked) -> {
 
 
@@ -72,6 +73,7 @@ public class TreeViewCheckBoxDemo extends Application {
 
 
 
+        // 鼠标点击节点事件
         treeView.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>()
         {
             public void handle(MouseEvent event)
