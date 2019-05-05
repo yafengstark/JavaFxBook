@@ -51,6 +51,7 @@ import javafx.stage.Stage;
 
 /**
  * 组合框
+ * svg绘制
  */
 public class ColorPickerSample extends Application {
       
