@@ -22,6 +22,12 @@ import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.VBox;
 
+/**
+ * 树状结构
+ * 编辑节点
+ *
+ * 指定单元工厂
+ */
 public class TreeViewSample extends Application {
 
 //    private final Node rootIcon =
