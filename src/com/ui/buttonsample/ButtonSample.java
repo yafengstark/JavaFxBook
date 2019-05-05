@@ -88,7 +88,7 @@ public class ButtonSample extends Application {
         HBox hbox2 = new HBox();
 
         Button button1 = new Button("Accept", new ImageView(imageAccept));
-        button1.getStyleClass().add("button1");
+        button1.getStyleClass().add("button1"); // 指定样式
         // 事件
         button1.setOnAction((ActionEvent e) -> {
             label.setText("Accepted");
@@ -105,7 +105,7 @@ public class ButtonSample extends Application {
         });
 
         button3.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
-            button3.setEffect(shadow);
+            button3.setEffect(shadow); // 設置陰影效果
         });
 
         button3.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
