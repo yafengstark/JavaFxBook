@@ -44,6 +44,9 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
+/**
+ * 组合框
+ */
 public class ComboBoxSample extends Application {
         public static void main(String[] args) {
         launch(args);
