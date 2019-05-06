@@ -16,6 +16,11 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
+/**
+ * http://www.leestorm.com/post/95.html
+ *
+ *
+ */
 public class JavaFxTestMain extends Application
 {
     @FXML
