@@ -35,6 +35,7 @@ package com.ui.treeviewsample;
 import java.util.Arrays;
 import java.util.List;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
@@ -45,7 +46,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import javafx.beans.property.SimpleStringProperty;
@@ -111,6 +114,20 @@ public class TreeViewSample extends Application {
         treeView.setEditable(true);
         treeView.setCellFactory((TreeView<String> p) -> 
             new TextFieldTreeCellImpl());
+
+        treeView.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>()
+        {
+            public void handle(MouseEvent event)
+            {
+                Node node = event.getPickResult().getIntersectedNode();
+
+                if (node instanceof Text || (node instanceof TreeCell && ((TreeCell) node).getText() != null)) {
+                    String name = (String) ((TreeItem)treeView.getSelectionModel().getSelectedItem()).getValue();
+                    System.out.println("Node click: " + name);
+                }
+            }
+        });
+
 
         box.getChildren().add(treeView);
         stage.setScene(scene);
