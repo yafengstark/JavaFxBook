@@ -66,6 +66,9 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+/**
+ * 可拖拽
+ */
 public final class DraggablePanelsExample extends Application {
 
     private final BooleanProperty dragModeActiveProperty =
@@ -119,8 +122,12 @@ public final class DraggablePanelsExample extends Application {
                 new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(final MouseEvent mouseEvent) {
+                        // 如果Drag Mode复选框被选中，则Event Filter会消费掉所有的鼠标事件，作为子节点，
+                        // 面板中所有的UI控件都不会再接收到鼠标事件。
+                        // 如果复选框未被选中，则鼠标光标所在位置的控件就会处理该事件。
                         if (dragModeActiveProperty.get()) {
                             // disable mouse events for all children
+                            // 为所有的子节点禁用鼠标事件
                             mouseEvent.consume();
                         }
                     }
@@ -134,6 +141,9 @@ public final class DraggablePanelsExample extends Application {
                         if (dragModeActiveProperty.get()) {
                             // remember initial mouse cursor coordinates
                             // and node position
+                            // 记住鼠标光标的初始坐标和node位置
+                            // 该Event Filter只为Panel处理鼠标按下事件。
+                            // 如果Drag Mode复选框被选中，鼠标的当前位置就会被存储下来。
                             dragContext.mouseAnchorX = mouseEvent.getX();
                             dragContext.mouseAnchorY = mouseEvent.getY();
                             dragContext.initialTranslateX =
@@ -149,9 +159,13 @@ public final class DraggablePanelsExample extends Application {
                 new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(final MouseEvent mouseEvent) {
+
+                        // 该Event Filter只为Panel处理鼠标拖拽事件。
+                        // 如果Drag Mode复选框被选中，该Panel就会被移动。
                         if (dragModeActiveProperty.get()) {
                             // shift node from its initial position by delta
                             // calculated from mouse cursor movement
+                            // 通过增量计算鼠标光标动作来从初始位置移动node
                             node.setTranslateX(
                                     dragContext.initialTranslateX
                                         + mouseEvent.getX()
