@@ -1,9 +1,6 @@
 package com.event;
 
-/**
- * @author tony
- * @date 2019/5/6 21:19
- */
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -11,7 +8,10 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
+/**
+ * @author tony
+ * @date 2019/5/6 21:19
+ */
 public class ButtonActionDemo extends Application {
 
     /**
@@ -30,6 +30,7 @@ public class ButtonActionDemo extends Application {
         btn.setLayoutX(100);
         btn.setLayoutY(80);
         btn.setText("Hello World");
+        // 注册事件处理器
         btn.setOnAction(new EventHandler<ActionEvent>() {
 
             public void handle(ActionEvent event) {
