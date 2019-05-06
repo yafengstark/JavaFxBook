@@ -43,6 +43,9 @@ import javafx.stage.Stage;
 
 /**
  * Demonstrates a drag-and-drop feature.
+ *
+ * 拖放操作
+ *
  */
 public class HelloDragAndDrop extends Application {
 
@@ -68,9 +71,12 @@ public class HelloDragAndDrop extends Application {
                 System.out.println("onDragDetected");
                 
                 /* allow MOVE transfer mode */
+                /* 检测到拖动，开始一个拖放手势 */
+                /* 允许move的传输方式 */
                 Dragboard db = source.startDragAndDrop(TransferMode.MOVE);
                 
                 /* put a string on dragboard */
+                /* 将一个字符串放到Dragboard中 */
                 ClipboardContent content = new ClipboardContent();
                 content.putString(source.getText());
                 db.setContent(content);
@@ -87,6 +93,7 @@ public class HelloDragAndDrop extends Application {
                 
                 /* accept it only if it is  not dragged from the same node 
                  * and if it has a string data */
+                //
                 if (event.getGestureSource() != target &&
                         event.getDragboard().hasString()) {
                     /* allow for moving */
@@ -103,6 +110,7 @@ public class HelloDragAndDrop extends Application {
                 /* the drag-and-drop gesture entered the target */
                 System.out.println("onDragEntered");
                 /* show to the user that it is an actual gesture target */
+                /* 拖放手势进入目标，提示客户它是一个真实的手势目标 */
                 if (event.getGestureSource() != target &&
                         event.getDragboard().hasString()) {
                     target.setFill(Color.GREEN);
@@ -116,18 +124,22 @@ public class HelloDragAndDrop extends Application {
             @Override
             public void handle(DragEvent event) {
                 /* mouse moved away, remove the graphical cues */
+                /* 鼠标移开，移除图形效果 */
                 target.setFill(Color.BLACK);
                 
                 event.consume();
             }
         });
-        
+
+        // 拖拽释放
         target.setOnDragDropped(new EventHandler <DragEvent>() {
             @Override
             public void handle(DragEvent event) {
                 /* data dropped */
                 System.out.println("onDragDropped");
                 /* if there is a string data on dragboard, read it and use it */
+                /* 数据被放下 */
+                /* 如果在dragboard上有一个字符串数据，则读取并使用之*/
                 Dragboard db = event.getDragboard();
                 boolean success = false;
                 if (db.hasString()) {
@@ -148,6 +160,8 @@ public class HelloDragAndDrop extends Application {
                 /* the drag-and-drop gesture ended */
                 System.out.println("onDragDone");
                 /* if the data was successfully moved, clear it */
+                /* 拖放手势结束*/
+                /* 如果数据被成功移走了，则清除之*/
                 if (event.getTransferMode() == TransferMode.MOVE) {
                     source.setText("");
                 }
