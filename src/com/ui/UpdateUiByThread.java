@@ -22,25 +22,25 @@ import javafx.util.Duration;
  * @author tony
  * @date 2019/5/9 21:46
  */
-public class UpdateUi extends Application {
+public class UpdateUiByThread extends Application {
 
 
     @Override
     public void start(Stage primaryStage) {
 
+
+        // 这种方式也不好
         Button button = new Button("Count");
 
         button.setOnAction((event) -> {
 
             new Thread(new Task<Void>() {
-
                 // call方法里面的线程非JavaFX线程
                 @Override
                 protected Void call() throws Exception {
 //                    button.setText("1xxx");  // 这里会报错
                     return null;
                 }
-
                 @Override
                 protected void succeeded() {
                     button.setText("xxx");
