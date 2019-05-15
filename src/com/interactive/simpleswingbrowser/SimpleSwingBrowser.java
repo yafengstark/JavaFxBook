@@ -49,6 +49,9 @@ import java.net.URL;
 
 import static javafx.concurrent.Worker.State.FAILED;
 
+/**
+ * swing内嵌JavaFX浏览器
+ */
 public class SimpleSwingBrowser extends JFrame {
 
     private final JFXPanel jfxPanel = new JFXPanel();
