@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.login.LoginViewController">
+   <children>
+      <Label layoutX="204.0" layoutY="26.0" prefHeight="38.0" prefWidth="243.0" text="某地理信息系统">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="154.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../resources/icons/earth.png" />
+         </image>
+      </ImageView>
+      <Line endX="600.0" layoutX="172.0" layoutY="80.0" opacity="0.68" startX="-200.0" />
+      <TextField fx:id="loginCodeTextField" layoutX="183.0" layoutY="178.0" prefHeight="30.0" prefWidth="233.0" promptText="登录码" text="输入登录码" />
+      <Button layoutX="184.0" layoutY="251.0" mnemonicParsing="false" onAction="#login" prefHeight="24.0" prefWidth="233.0" style="-fx-background-color: #059BEC;" text="确定" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
